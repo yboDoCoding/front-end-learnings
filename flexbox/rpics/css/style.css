@@ -93,6 +93,10 @@ section div {
     max-width: 400px;
 }
 
+#about p {
+    text-align: justify;
+}
+
 #about img {
     display: flex;
     flex-shrink: 1;
