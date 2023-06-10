@@ -12,6 +12,7 @@ html {
 
 body {
     font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
 }
 
 nav {    
@@ -22,8 +23,7 @@ nav {
     padding-inline: 2rem;
     background-color: #263F5E;
     color: #F3F9FF;
-    align-items: center;
-    font-size: 1.3rem;
+    align-items: center;    
     letter-spacing: 1.3px;
     position: fixed;
 }
@@ -40,11 +40,20 @@ h2 a {
     color: #F3F9FF;
 }
 
+li a {
+    font-size: 1rem;
+}
+
+h2 a {
+    font-size: 2rem;
+}
+
 :target::before {
     content: "";
     display: block;
+    width: 100vw;
     height: 13vh;
-    margin-top: -7vh;
+    margin: -7vh 0 0 0;
 }
 
 header {
@@ -80,9 +89,10 @@ section div {
     align-items: center;
     max-width: 916px;
     flex-wrap: wrap;
-    gap: 1rem;   
-    padding: 1rem;
+    gap: 1rem;       
+    text-align: center;
 }
+
 #gallery img {    
     width: 280px;  
     height: 290px;  
@@ -90,6 +100,7 @@ section div {
 
 #about p,
 #about img {
+    min-width: 200px;
     max-width: 400px;
 }
 
@@ -102,6 +113,10 @@ section div {
     flex-shrink: 1;
 }
 
+#contact {
+    padding: 1rem;
+}
+
 #contact form {    
     max-width: 916px;
     display: flex;
@@ -110,7 +125,6 @@ section div {
     padding: 2rem;
     gap: .7rem;
     border-radius: 10px;
-    margin: 1rem;
 }
 
 form input,
