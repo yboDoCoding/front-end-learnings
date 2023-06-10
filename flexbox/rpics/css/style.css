@@ -98,14 +98,10 @@ section div {
     height: 290px;  
 }
 
-#about {
-    padding-inline: 1rem;
-}
-
 #about p,
 #about img {
-    min-width: 200px;
-    max-width: 400px;
+    padding-inline: 1rem;
+    width: 384px;
 }
 
 #about p {
