@@ -14,92 +14,6 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-/* nav {
-    min-height: 7vh;
-    background: #333;
-    color: #fff;
-    display: flex;
-    justify-content: space-between;
-    padding-inline: 2rem;
-    align-items: center;
-    letter-spacing: 1.3px;
-    position: fixed;
-    width: 100%;
-}
-
-ul {
-    list-style-type: none;
-    display: flex;
-    gap: 1rem;
-}
-
-li a,
-li a:visited {
-    text-decoration: none;
-    color: #fff;    
-}
-
-li a:hover,
-li a:focus {
-    color: hsla(0, 0%, 100%, 0.95);    
-}
- */
-
-
-/* article {
-    min-height: 100vh;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-article {
-    max-width: 900px;
-    margin-inline: auto;
-}
-
-article h2 {
-    padding: 1rem;
-}
-
-#gallery section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-}
-
-#gallery img {
-    max-width: 290px;
-    height: 290px;
-}
-
-#about section{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    padding: 1rem;
-}
-
-#about img {
-    max-width: 400px;
-}
-
-#about p{
-    max-width: 400px;
-    text-align: justify;
-}
-
-form input,
-form textarea {
-    padding-left: .3rem;
-}
-
-
-} */
-
 nav {    
     min-height: 7vh;
     width: 100%;
@@ -179,17 +93,12 @@ section div {
     max-width: 400px;
 }
 
-#about p {
-    text-align: justify;
-}
-
 #about img {
     display: flex;
     flex-shrink: 1;
 }
 
-#contact form {
-    min-width: 400px;
+#contact form {    
     max-width: 916px;
     display: flex;
     flex-direction: column;
@@ -203,13 +112,17 @@ section div {
 form input,
 form textarea {
     padding: 10px;
-    width: 400px;
+    width: 100%;
     border: 1px solid #333;
     border-radius: 10px;
 }
 
 .buttons {
-    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
 }
 
 form button,
