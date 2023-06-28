@@ -1,0 +1,342 @@
+/* || RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* || VARIABLES */
+:root {
+    --FONT-SIZE-L: 1.5rem;
+    --FONT-SIZE: 1.2rem;
+    --HEADER-BGCOLOR: #333;
+    --HEADER-COLOR: whitesmoke;
+}
+
+/* || GENERAL STYLES */
+
+html {
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+    letter-spacing: 0.3px;
+}
+
+a,
+nav a {
+    color: var(--HEADER-COLOR);
+    text-decoration: none;
+}
+
+header, 
+footer,
+.nav--secondary {
+    position: sticky;
+}
+
+header,
+.nav--secondary {
+    top: 0;
+}
+
+
+/* MAIN NAVIGATION */
+header {
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    font-size: var(--FONT-SIZE-L);
+}
+
+.header-title-line {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.menu-button {
+    align-items: center;
+    background: transparent;
+    border: none;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    position: relative;
+    width: 48px;
+}
+
+.menu-icon,
+.menu-icon::before,
+.menu-icon::after {
+    background-color: var(--HEADER-COLOR);
+    border-radius: 5px;
+    height: 5px;
+    position: absolute;
+    transition: all 0.5s;
+    width: 40px;
+}
+
+.menu-icon::before,
+.menu-icon::after {
+    content: "";
+}
+
+.menu-icon::before {
+    transform: translate(-20px, -12px);
+} 
+
+.menu-icon::after {
+    transform: translate(-20px, 12px);
+} 
+
+:is(header:hover, header:focus-within) .menu-icon::before {
+    transform: translateX(-20px) rotate(45deg);
+}
+
+:is(header:hover, header:focus-within) .menu-icon::after {
+    transform: translateX(-20px) rotate(-45deg);
+}
+
+:is(header:hover, header:focus-within) .menu-icon {
+    background: transparent;
+}
+
+:is(header:hover, header:focus-within) nav {
+    display: block;
+}
+
+:is(header:hover, header:focus-within) .menu-button {
+    transform: rotate(720deg);
+    transition: all 0.5s;
+}
+
+header nav {
+    animation: showMenu 0.5s ease-in-out forwards;
+    background-color: var(--HEADER-BGCOLOR);
+    display: none;
+    transform-origin: top center;
+}
+
+@keyframes showMenu {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+header ul {
+    display: flex;
+    flex-flow: column nowrap;
+    list-style-type: none;
+}
+
+header li {
+    border-top: 1px solid var(--HEADER-COLOR);
+    padding: 0.5rem;
+}
+
+header li a:any-link {
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+}
+
+header li a:hover,
+header li a:focus {
+    transform: scale(1.2);
+    transition: all 0.5s;
+}
+/* -- END OF MAIN NAVIGATION -- */
+
+
+/* SECONDARY NAVIGATION */
+.nav--secondary {
+    display: block;
+}
+
+.nav--secondary {
+    align-items: center;
+    background-color: var(--HEADER-BGCOLOR);
+    display: none;
+    flex-flow: row nowrap;
+    font-size: var(--FONT-SIZE-L);
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.nav--secondary ul {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+    list-style-type: none;
+}
+
+.nav--secondary a:hover,
+.nav--secondary a:focus {
+    filter: brightness(95%);
+}
+/* -- END OF SECONDARY NAVIGATION -- */
+
+/* MAIN CONTENT */
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    flex-grow: 1;
+}
+
+main article {
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    row-gap: 1rem;
+    scroll-margin-top: 3rem;
+    text-align: center;
+}
+
+main p {
+    line-height: 1.5rem;
+    text-align: justify;
+}
+
+main .container {
+    margin-inline: auto;
+    width: min(90vw, 700px);
+}
+
+.item {
+    background-color: var(--HEADER-BGCOLOR);
+    height: 200px;
+    width: 200px;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+article input,
+article textarea {
+    border-radius: 5px;
+    display: block;
+    padding: 0.3rem;
+    width: 100%;
+}
+
+article input {
+    border: 1px solid var(--HEADER-BGCOLOR);
+}
+
+article:last-child .container div {
+    text-align: justify;
+}
+
+article:last-child .container div {
+    width: 100%;
+}
+
+article:last-child .container div:first-child {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+article:last-child .container div:first-child p,
+article:last-child .container div:last-child button {
+    width: 48%;
+}
+
+article:last-child .container div:last-child {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1rem;
+}
+
+article:last-child .container div:last-child button {
+    background: none;
+    border-radius: 5px;
+    border: 1px solid var(--HEADER-BGCOLOR);
+    padding: 0.5rem 1rem;
+}
+
+article:last-child .container div:last-child button:hover,
+article:last-child .container div:last-child button:focus {
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+}
+/* -- END OF MAIN CONTENT -- */
+
+
+/* FOOTER */
+footer {
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    padding-block: 1rem;
+    text-align: center;
+}
+
+footer {
+    bottom: 0;
+}
+/* -- END OF FOOTER -- */
+
+/* || MEDIA QUERIES */
+@media screen and (min-width: 576px) {
+    header {
+        display: none;
+    }
+
+    .nav--secondary {
+        display: flex;
+    }
+
+    article:last-child .container {
+        flex-flow: column nowrap;
+    }
+
+    article:last-child .container div:first-child {
+        align-items: center;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }    
+
+    article:last-child .container div:first-child p {
+        width: 100%;
+    }
+
+    article:last-child .container div {
+        width: 60%;
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 992px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1400px) {
+
+}
