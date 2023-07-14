@@ -111,7 +111,7 @@ header nav {
     display: none;
     transform-origin: top center;
     position: absolute;
-    width: 100%;
+    width: 100%;    
 }
 
 @keyframes showMenu {
@@ -144,6 +144,7 @@ header li a:any-link {
     margin: auto;
     text-align: center;
     width: 80%;
+    padding-block: 1rem;
 }
 
 header li a:hover,
