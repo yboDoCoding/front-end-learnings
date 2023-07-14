@@ -1,0 +1,269 @@
+/* || RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* VARIABLES */
+:root {
+    --FONT-SIZE-L: 1.5rem;
+    --FONT-SIZE: 1.2rem;
+    --HEADER-BGCOLOR: #333;
+    --HEADER-COLOR: whitesmoke;
+}
+
+/* UTILITIES */
+.no-wrap {
+    white-space: nowrap;
+}
+
+/* || GENERAL STYLES*/
+html {
+    font-family: sans-serif;
+    scroll-behavior: smooth;    
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    letter-spacing: 0.3px;
+    min-height: 100vh;    
+}
+
+abbr {
+    text-decoration: none;
+}
+
+/* HEADER */
+header, footer {
+    position: sticky;
+    top: 0;
+}
+
+.header-title {
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    padding-inline: 1rem;
+    justify-content: space-between;
+    min-height: 7vh;
+    
+}
+
+.header-title h1 {
+    font-size: var(--FONT-SIZE-L);
+}
+
+.menu-button {
+    align-items: center;
+    background: transparent;
+    border: none;
+    display: flex;
+    height: 48px;
+    justify-content: center;
+    position: relative;
+    width: 48px;
+}
+
+button div:first-child,
+button div:nth-child(2),
+button div:last-child {
+    background-color: var(--HEADER-COLOR);
+    border-radius: 5px;
+    height: 5px;
+    position: absolute;
+    transition: all 0.5s;
+    width: 40px;
+}
+
+button div:first-child {
+    transform: translateY(-12px);
+} 
+
+button div:last-child {
+    transform: translateY(12px);
+} 
+
+.top-box {transform: rotate(45deg) !important;}
+.mid-box {background: transparent !important;}
+.bottom-box {transform: rotate(-45deg) !important;}
+.transition-button {
+    transform: rotate(720deg);
+    transition: all 0.5s;
+}
+.display-block {display: block;}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: var(--HEADER-COLOR);
+}
+
+header nav {
+    animation: showMenu 0.5s ease-in-out forwards;
+    background-color: var(--HEADER-BGCOLOR);
+    display: none;
+    transform-origin: top center;
+    position: absolute;
+    width: 100%;
+}
+
+@keyframes showMenu {
+    0% {
+        transform: scale(0);
+    }
+
+    80% {
+        transform: scale(1.2);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+header ul {
+    display: flex;
+    flex-flow: column nowrap;
+    list-style-type: none;
+}
+
+header li {
+    border-top: 1px solid var(--HEADER-COLOR);
+    padding: 0.5rem;
+}
+
+header li a:any-link {
+    display: block;
+    margin: auto;
+    text-align: center;
+    width: 80%;
+}
+
+header li a:hover,
+header li a:focus {
+    transform: scale(1.2);
+    transition: all 0.5s;    
+}
+
+/* MAIN CONTENT */
+main {
+    flex-grow: 1;
+}
+
+/* MAIN PROFILE */
+article {
+    min-height: 91vh;
+    scroll-margin: 7vh;      
+    display: flex;
+    flex-flow: row wrap;
+    place-content: center;    
+    text-align: center;
+}
+
+.profile section {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1rem;
+    text-align: center;
+}
+
+.profile img {
+    border-radius: 50%;
+    width: 80%;
+    height: auto;
+    border: 2px double var(--HEADER-BGCOLOR);
+    
+}
+
+.profile h2 {
+    order: 1;
+    font-size: clamp(var(--FONT-SIZE), 2.5vw, var(--FONT-SIZE-L));
+
+}
+
+.profile figcaption {
+    order: 2;
+}
+
+/* MAIN ARTICLES */
+.lesson {
+    display: flex;
+    flex-flow: column nowrap;
+    padding-inline: 1rem;
+    row-gap: 2rem;
+    text-align: justify;
+    margin: 1rem;
+    border: 1px solid var(--HEADER-BGCOLOR);
+    border-radius: 50px;
+
+}
+
+.lesson h2 {
+    text-align: center;
+}
+
+.lesson h3 {
+    padding-bottom: 0.8rem;
+}
+
+.lesson p {
+    line-height: 200%;
+}
+
+
+/* FOOTER */
+footer {
+    min-height: 2vh;
+    bottom: 0;
+    text-align: center;
+    background-color: var(--HEADER-BGCOLOR);
+    color: var(--HEADER-COLOR);
+    padding-block: .3rem;
+}
+
+
+/* || MEDIA QUERIES */
+@media screen and (min-width: 576px) {
+    
+}
+
+@media screen and (min-width: 768px) {
+
+}
+
+@media screen and (min-width: 992px) {
+    .lesson h2 {
+        width: 100%;
+        padding-bottom: 2rem;
+    }
+
+    .lesson-summary,
+    .lesson-conclusion {
+        width: 40%;
+    }
+
+    .lesson {
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+}
+
+@media screen and (min-width: 1400px) {
+    body {
+        width: 80%;
+        margin-inline: auto;
+        border-left: 1px solid var(--HEADER-BGCOLOR);
+        border-right: 1px solid var(--HEADER-BGCOLOR);
+    }
+}
