@@ -244,7 +244,11 @@ footer {
         padding-bottom: 2rem;
     }
 
-    .lesson-summary,
+    .lesson-summary {
+        width: 90%;
+    }
+
+    .lesson-insights,
     .lesson-conclusion {
         width: 40%;
     }
